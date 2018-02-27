@@ -33,6 +33,7 @@
                                 </ul>
                                 <label>お名前（漢字）</label>
                                 <input type="text" name="kanjiName" th:value="${form.kanjiName}"/>
+                                <label>津田太郎</label>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('kanaName')} ? 'error'">
                                 <ul class="ui red basic label" th:if="${form.hasErrors('kanaName')}">
