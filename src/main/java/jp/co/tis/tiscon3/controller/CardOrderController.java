@@ -43,9 +43,13 @@ public class CardOrderController {
      *
      * @return 本人登録ページresponse
      */
-    public HttpResponse inputUser() {
-        return templateEngine.render("cardOrder/user", "form", new CardOrderForm());
+    public HttpResponse inputUser( ) { //引数追加
+
+        return templateEngine.render("cardOrder/user", "form", new CardOrderForm()); //表示
     }
+
+
+
 
     /**
      * お勤め先登録ページを表示します.
@@ -54,9 +58,13 @@ public class CardOrderController {
      */
     public HttpResponse inputJob(CardOrderForm form) {
         // エラーを出したくないので強制的にエラーを消す.
-        form.setErrors(null);
+        //form.setErrors(null);
+        if (form.hasErrors()) { //if分追加
+            return templateEngine.render("cardOrder/user", "form", form);
+        }
+        
+            return templateEngine.render("cardOrder/job", "form", form);//表示させる
 
-        return templateEngine.render("cardOrder/job", "form", form);
     }
 
     /**
