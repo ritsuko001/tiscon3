@@ -29,15 +29,21 @@
                             <div class="field" th:classappend="${form.hasErrors('kanjiName')} ? 'error'">
                                 <label>お名前（漢字）</label>
                                 <input type="text" name="kanjiName" th:value="${form.kanjiName}"/>
+                            <label>（例）津田太郎</label>
                             </div>
+
                             <div class="field" th:classappend="${form.hasErrors('kanaName')} ? 'error'">
                                 <label>お名前（カナ）</label>
                                 <input type="text" name="kanaName" th:value="${form.kanaName}"/>
-                            </div>
-                            <div class="field" th:classappend="${form.hasErrors('alphabetName')} ? 'error'">
+                    　　　　　　　<label>（例) ツダタロウ</label>
+                    　　　　　</div>
+
+                    　　　　　<div class="field" th:classappend="${form.hasErrors('alphabetName')} ? 'error'">
                                 <label>お名前（ローマ字）</label>
                                 <input type="text" name="alphabetName" th:value="${form.alphabetName}"/>
+                                <label>（例）TSUDA TAROU</label>
                             </div>
+                    　　　　　
                             <div class="field" th:classappend="${form.hasErrors('gender')} ? 'error'">
                                 <label>性別</label>
                                 <input type="radio" name="gender" value="male" th:checked="${form.gender}=='male'"/>男性
@@ -46,11 +52,16 @@
                             <div class="field" th:classappend="${form.hasErrors('dateOfBirth')} ? 'error'">
                                 <label>生年月日</label>
                                 <input type="text" name="dateOfBirth" th:value="${form.dateOfBirth}"/>
+                                <label>（例）1996/04/03</label>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('zipCode')} ? 'error'">
                                 <label>郵便番号</label>
                                 <input type="text" class="zipcode" name="zipCode" th:value="${form.zipCode}"/>
                             </div>
+                            <div class="field" th:classappend="${form.hasErrors('address')} ? 'error'">
+                                <label>（例）123-1234</label>
+                            </div>
+
                             <div class="field" th:classappend="${form.hasErrors('address')} ? 'error'">
                                 <label>ご住所</label>
                                 <input type="text" name="address" th:value="${form.address}"/>
@@ -58,10 +69,12 @@
                             <div class="field" th:classappend="${form.hasErrors('homePhoneNumber')} ? 'error'">
                                 <label>自宅電話番号</label>
                                 <input type="text" name="homePhoneNumber" th:value="${form.homePhoneNumber}"/>
+                                <label>（例) 123-1234-1234</label>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('mobilePhoneNumber')} ? 'error'">
                                 <label>携帯電話番号</label>
                                 <input type="text" name="mobilePhoneNumber" th:value="${form.mobilePhoneNumber}"/>
+                                <label>（例）123-1234-1234</label>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('emailAddress')} ? 'error'">
                                 <label>メールアドレス</label>
