@@ -57,11 +57,11 @@ public class CardOrderForm extends FormBase {
 
     @NotBlank(message = "※選択してください")
     @Size(max = 20)
-    private String spouse;
+    private String spouse;//配偶者
 
     @NotBlank(message = "※選択してください")
     @Size(max = 20)
-    private String houseClassification;
+    private String houseClassification;//お住まい
 
     @NotBlank(message = "※入力してください")
     @Size(max = 6, message = "※入力に誤りがあります")

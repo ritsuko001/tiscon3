@@ -28,7 +28,7 @@
                             <div class="ui horizontal divider">ご本人について</div>
 
                             <div class="field" th:classappend="${form.hasErrors('kanjiName')} ? 'error'">
-                                <ul class="ui red basic label" th:if="${form.hasErrors('kanjiName')}">
+                                <ul class="ui red basic label" th:if="${form.hasErrors('kanjiName')}">//エラー文
                                     <li th:text="${form.getErrors('kanjiName')[0]}"></li>
                                 </ul>
                                 <label>お名前（漢字）</label>
