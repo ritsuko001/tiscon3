@@ -21,7 +21,7 @@
 
                             <!-- /*エラーがあれば表示する*/ -->
                             <ul class="ui red basic label" th:if="${form.hasErrors()}">
-                                <li th:each="error : ${form.getErrors().entrySet()}" th:text="${error.value}"></li>
+                                <li>入力に誤りがあります</li>
                             </ul>
 
                             <div class="ui horizontal divider">お勤め先について</div>
