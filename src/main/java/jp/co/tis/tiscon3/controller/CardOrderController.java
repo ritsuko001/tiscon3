@@ -62,9 +62,11 @@ public class CardOrderController {
         if (form.hasErrors()) { //if分追加
             return templateEngine.render("cardOrder/user", "form", form);
         }
-        
+        if (form.getJob().equals("経営自営")||form.getJob().equals("会社員")||form.getJob().equals("契約派遣")||form.getJob().equals("公務員")||form.getJob().equals("民間団体")||form.getJob().equals("他有職")) { //条件に当てはまるひとだけjobへ
             return templateEngine.render("cardOrder/job", "form", form);//表示させる
-
+        }
+        //完了ページへ
+        return templateEngine.render("cardOrder/completed", "form", form);
     }
 
     /**
