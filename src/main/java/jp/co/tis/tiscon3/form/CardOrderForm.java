@@ -28,7 +28,7 @@ public class CardOrderForm extends FormBase {
     @Pattern(regexp = "\\d{4}/\\d{1,2}/\\d{1,2}$", message = "※半角数字と/を用いて西暦で入力してください")
     private String dateOfBirth;
 
-    @NotBlank(message = "※入力してください")
+    @NotBlank(message = "※選択してください")
     @Size(max = 6)
     private String gender;
 
