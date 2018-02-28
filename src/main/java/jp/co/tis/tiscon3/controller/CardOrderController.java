@@ -119,7 +119,7 @@ public class CardOrderController {
             form.getErrors().add("employeeLength", "入力してください");
         }
         if (form.hasErrors()) {
-            return templateEngine.render("cardOrder/user", "form", form);
+            return templateEngine.render("cardOrder/job", "form", form);
         }
         CardOrder cardOrder = beans.createFrom(form, CardOrder.class);
 
