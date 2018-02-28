@@ -30,24 +30,39 @@
 
                             <div class="field" th:classappend="${form.hasErrors('employerName')} ? 'error'">
                                 <label>お勤め先名</label>
+                                <ul class="ui red basic label" th:if="${form.hasErrors('employerName')}">
+                                    <li th:text="${form.getErrors('employerName')[0]}"></li>
+                                </ul>
                                 <input type="text" name="employerName" th:value="${form.employerName}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('employerZipCode')} ? 'error'">
                                 <label>お勤め先郵便番号</label>
+                                <ul class="ui red basic label" th:if="${form.hasErrors('employerZipCode')}">
+                                    <li th:text="${form.getErrors('employerZipCode')[0]}"></li>
+                                </ul>
                                 <input type="text" name="employerZipCode" th:value="${form.employerZipCode}"/>
                                 <label>（例）123-1234</label>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('employerAddress')} ? 'error'">
                                 <label>お勤め先住所</label>
+                                <ul class="ui red basic label" th:if="${form.hasErrors('employerAddress')}">
+                                    <li th:text="${form.getErrors('employerAddress')[0]}"></li>
+                                </ul>
                                 <input type="text" name="employerAddress" th:value="${form.employerAddress}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('employerPhoneNumber')} ? 'error'">
                                 <label>お勤め先電話番号</label>
+                                <ul class="ui red basic label" th:if="${form.hasErrors('employerPhoneNumber')}">
+                                    <li th:text="${form.getErrors('employerPhoneNumber')[0]}"></li>
+                                </ul>
                                 <input type="text" name="employerPhoneNumber" th:value="${form.employerPhoneNumber}"/>
                                 <label>（例）123-1234-1234</label>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('industryType')} ? 'error'">
                                 <label>業種</label>
+                                <ul class="ui red basic label" th:if="${form.hasErrors('industryType')}">
+                                    <li th:text="${form.getErrors('industryType')[0]}"></li>
+                                </ul>
                                 <input type="radio" name="industryType" value="農林水鉱" th:checked="${form.industryType}=='農林水鉱'"/>農業・林業・水産業・鉱業
                                 <input type="radio" name="industryType" value="建築不動産" th:checked="${form.industryType}=='建築不動産'"/>建設・不動産業
                                 <input type="radio" name="industryType" value="製造" th:checked="${form.industryType}=='製造'"/>製造業
@@ -69,6 +84,9 @@
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('companySize')} ? 'error'">
                                 <label>お勤め先の規模（従業員数）</label>
+                                <ul class="ui red basic label" th:if="${form.hasErrors('companySiza')}">
+                                    <li th:text="${form.getErrors('companySize')[0]}"></li>
+                                </ul>
                                 <input type="radio" name="companySize" th:field="${form.companySize}" value="9" th:checked="${form.companySize}=='9'"/>１０名未満
                                 <input type="radio" name="companySize" th:field="${form.companySize}" value="29" th:checked="${form.companySize}=='29'"/>１０名以上３０名未満
                                 <input type="radio" name="companySize" th:field="${form.companySize}" value="49" th:checked="${form.companySize}=='49'"/>３０名以上５０名未満
@@ -78,14 +96,23 @@
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('department')} ? 'error'">
                                 <label>所属部署</label>
+                                <ul class="ui red basic label" th:if="${form.hasErrors('department')}">
+                                    <li th:text="${form.getErrors('department')[0]}"></li>
+                                </ul>
                                 <input type="text" name="department" th:value="${form.department}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('position')} ? 'error'">
                                 <label>役職</label>
+                                <ul class="ui red basic label" th:if="${form.hasErrors('position')}">
+                                    <li th:text="${form.getErrors('position')[0]}"></li>
+                                </ul>
                                 <input type="text" name="position" th:value="${form.position}"/>
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('employeeLength')} ? 'error'">
                                 <label>勤続年数</label>
+                                <ul class="ui red basic label" th:if="${form.hasErrors('employeeLength')}">
+                                    <li th:text="${form.getErrors('employeeLength')[0]}"></li>
+                                </ul>
                                 <input type="text" class="number" name="employeeLength" th:value="${form.employeeLength}"/><span class="unit">年</span >
                             </div>
 

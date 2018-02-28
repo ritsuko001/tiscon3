@@ -46,6 +46,7 @@ public class CardOrderController {
     public HttpResponse inputUser( ) { //引数追加
 
         return templateEngine.render("cardOrder/user", "form", new CardOrderForm()); //表示
+
     }
 
 
@@ -56,9 +57,11 @@ public class CardOrderController {
      *
      * @return お勤め先登録ページresponse
      */
+
     public HttpResponse inputJob(CardOrderForm form) {
         // エラーを出したくないので強制的にエラーを消す.
         //form.setErrors(null);
+
         if (form.hasErrors()) { //if分追加
             return templateEngine.render("cardOrder/user", "form", form);
         }
