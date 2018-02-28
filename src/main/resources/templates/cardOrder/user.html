@@ -30,7 +30,7 @@
                             <div class="fields">
 
                             <div class="field" th:classappend="${form.hasErrors('kanjiName')} ? 'error'">
-                                <ul class="ui red basic label" th:if="${form.hasErrors('kanjiName')}">//エラー文
+                                <ul class="ui red basic label" th:if="${form.hasErrors('kanjiName')}">
                                     <li th:text="${form.getErrors('kanjiName')[0]}"></li>
                                 </ul>
                                 <label>お名前（漢字）</label>
