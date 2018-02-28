@@ -115,6 +115,7 @@
                                 <br>
                                 <input type="radio" name="companySize" th:field="${form.companySize}" value="500" th:checked="${form.companySize}=='500'"/>５００名以上
                             </div>
+                            <div class="fields">
                             <div class="field" th:classappend="${form.hasErrors('department')} ? 'error'">
                                 <label>所属部署</label>
                                 <ul class="ui red basic label" th:if="${form.hasErrors('department')}">
@@ -129,6 +130,8 @@
                                 </ul>
                                 <input type="text" name="position" th:value="${form.position}"/>
                             </div>
+                            </div>
+                            
                             <div class="field" th:classappend="${form.hasErrors('employeeLength')} ? 'error'">
                                 <label>勤続年数</label>
                                 <ul class="ui red basic label" th:if="${form.hasErrors('employeeLength')}">
@@ -136,6 +139,8 @@
                                 </ul><br>
                                 <input type="text" class="number" name="employeeLength" th:value="${form.employeeLength}"/><span class="unit">年</span >
                             </div>
+
+
 
                             <!--/*"ご本人"の入力値を引き回すための隠し項目*/-->
                             <input type="hidden" name="kanjiName" th:value="${form.kanjiName}"/>

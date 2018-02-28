@@ -25,7 +25,9 @@
                                 </li>
                             </ul>
 
+
                             <div class="ui horizontal divider">ご本人について</div>
+                            <div class="fields">
 
                             <div class="field" th:classappend="${form.hasErrors('kanjiName')} ? 'error'">
                                 <ul class="ui red basic label" th:if="${form.hasErrors('kanjiName')}">//エラー文
@@ -43,9 +45,9 @@
                                 <label>お名前（カナ）</label>
                                 <input type="text" name="kanaName" th:value="${form.kanaName}"/>
                     　　　　　　　<label>（例) ツダタロウ</label>
-                    　　　　　</div>
+                    　　　　</div>
 
-                    　　　　　<div class="field" th:classappend="${form.hasErrors('alphabetName')} ? 'error'">
+                    　　　　<div class="field" th:classappend="${form.hasErrors('alphabetName')} ? 'error'">
                                 <ul class="ui red basic label" th:if="${form.hasErrors('alphabetName')}">
                                     <li th:text="${form.getErrors('alphabetName')[0]}"></li>
                                 </ul>
@@ -53,7 +55,16 @@
                                 <input type="text" name="alphabetName" th:value="${form.alphabetName}"/>
                                 <label>（例）TSUDA TAROU</label>
                             </div>
-                    　　　　　
+                            </div>
+                            <div class="fields">　
+                                <div class="field" th:classappend="${form.hasErrors('dateOfBirth')} ? 'error'">
+                                    <ul class="ui red basic label" th:if="${form.hasErrors('dateOfBirth')}">
+                                        <li th:text="${form.getErrors('dateOfBirth')[0]}"></li>
+                                    </ul>
+                                    <label>生年月日</label>
+                                    <input type="text" name="dateOfBirth" th:value="${form.dateOfBirth}"/>
+                                    <label>（例）1996/04/03</label>
+                                </div>　　　
                             <div class="field" th:classappend="${form.hasErrors('gender')} ? 'error'">
                                 <ul class="ui red basic label" th:if="${form.hasErrors('gender')}">
                                     <li th:text="${form.getErrors('gender')[0]}"></li>
@@ -62,13 +73,7 @@
                                 <input type="radio" name="gender" value="male" th:checked="${form.gender}=='male'"/>男性
                                 <input type="radio" name="gender" value="female" th:checked="${form.gender}=='female'"/>女性
                             </div>
-                            <div class="field" th:classappend="${form.hasErrors('dateOfBirth')} ? 'error'">
-                                <ul class="ui red basic label" th:if="${form.hasErrors('dateOfBirth')}">
-                                    <li th:text="${form.getErrors('dateOfBirth')[0]}"></li>
-                                </ul>
-                                <label>生年月日</label>
-                                <input type="text" name="dateOfBirth" th:value="${form.dateOfBirth}"/>
-                                <label>（例）1996/04/03</label>
+
                             </div>
                             <div class="field" th:classappend="${form.hasErrors('zipCode')} ? 'error'">
                                 <ul class="ui red basic label" th:if="${form.hasErrors('zipCode')}">
@@ -88,6 +93,7 @@
                                 <label>ご住所</label>
                                 <input type="text" name="address" th:value="${form.address}"/>
                             </div>
+                            <div class="fields">
                             <div class="field" th:classappend="${form.hasErrors('homePhoneNumber')} ? 'error'">
                                 <ul class="ui red basic label" th:if="${form.hasErrors('homePhoneNumber')}">
                                     <li th:text="${form.getErrors('homePhoneNumber')[0]}"></li>
@@ -104,6 +110,8 @@
                                 <input type="text" name="mobilePhoneNumber" th:value="${form.mobilePhoneNumber}"/>
                                 <label>（例）123-1234-1234</label>
                             </div>
+                            </div>
+
                             <div class="field" th:classappend="${form.hasErrors('emailAddress')} ? 'error'">
                                 <ul class="ui red basic label" th:if="${form.hasErrors('emailAddress')}">
                                     <li th:text="${form.getErrors('emailAddress')[0]}"></li>
