@@ -43,11 +43,12 @@ public class CardOrderController {
      *
      * @return 本人登録ページresponse
      */
-    public HttpResponse inputUser() { //引数追加
+    public HttpResponse inputUser( ) { //引数追加
 
         return templateEngine.render("cardOrder/user", "form", new CardOrderForm()); //表示
-
     }
+
+
 
 
     /**
@@ -55,18 +56,15 @@ public class CardOrderController {
      *
      * @return お勤め先登録ページresponse
      */
-
     public HttpResponse inputJob(CardOrderForm form) {
         // エラーを出したくないので強制的にエラーを消す.
         //form.setErrors(null);
-        if (form.hasErrors()) { //if分追加 userでエラーがあればuserをもう一度表示
+        if (form.hasErrors()) { //if分追加
             return templateEngine.render("cardOrder/user", "form", form);
         }
-        if (form.getJob().equals("経営自営")||form.getJob().equals("会社員")||form.getJob().equals("契約派遣")||form.getJob().equals("公務員")||form.getJob().equals("民間団体")||form.getJob().equals("他有職")) { //条件に当てはまるひとだけjobへ
+        
             return templateEngine.render("cardOrder/job", "form", form);//表示させる
-        }
-        //完了ページへ
-        return templateEngine.render("cardOrder/completed", "form", form);
+
     }
 
     /**
@@ -77,9 +75,7 @@ public class CardOrderController {
     public HttpResponse modifyUser(CardOrderForm form) {
         // エラーを出したくないので強制的にエラーを消す.
         form.setErrors(null);
-        //if (form.hasErrors()) { //if分追加 userでエラーがあればuserをもう一度表示
-        //   return templateEngine.render("cardOrder/job", "form", form);
-        //}
+
         return templateEngine.render("cardOrder/user", "form", form);
     }
 
@@ -91,7 +87,7 @@ public class CardOrderController {
     @Transactional
     public HttpResponse create(CardOrderForm form) {
         if (form.hasErrors()) {
-            return templateEngine.render("cardOrder/job", "form", form);
+            return templateEngine.render("cardOrder/user", "form", form);
         }
         CardOrder cardOrder = beans.createFrom(form, CardOrder.class);
 
