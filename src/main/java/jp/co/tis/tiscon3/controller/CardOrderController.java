@@ -90,6 +90,36 @@ public class CardOrderController {
      */
     @Transactional
     public HttpResponse create(CardOrderForm form) {
+        if (form.getEmployerAddress().isEmpty()){
+            form.getErrors().add("employerAddress", "入力してください");
+        }
+        if (form.getEmployerName().isEmpty()){
+            form.getErrors().add("employerName", "入力してください");
+        }
+        if (form.getEmployerPhoneNumber().isEmpty()){
+            form.getErrors().add("employerPhoneNumber", "入力してください");
+        }
+        if (form.getEmployerZipCode().isEmpty()){
+            form.getErrors().add("employerZipCode", "入力してください");
+        }
+        if (form.getIndustryType()==null){
+            form.getErrors().add("industryType", "選択してください");
+        }
+        if (form.getPosition().isEmpty()){
+            form.getErrors().add("position", "入力してください");
+        }
+        if (form.getCompanySize()==null){
+            form.getErrors().add("companySize", "選択してください");
+        }
+        if (form.getCapital()==null){
+            form.getErrors().add("capital", "選択してください");
+        }
+        if (form.getDepartment().isEmpty()){
+            form.getErrors().add("department", "入力してください");
+        }
+        if (form.getEmployeeLength().isEmpty()){
+            form.getErrors().add("employeeLength", "入力してください");
+        }
         if (form.hasErrors()) {
             return templateEngine.render("cardOrder/job", "form", form);
         }
