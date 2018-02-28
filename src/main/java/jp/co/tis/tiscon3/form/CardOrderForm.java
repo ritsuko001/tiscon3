@@ -34,7 +34,7 @@ public class CardOrderForm extends FormBase {
 
     @NotBlank(message = "※入力してください")
     @Size(max = 8)
-    @Pattern(regexp = "^[0-9]{3}-[0-9]{4}$")
+    @Pattern(regexp = "^[0-9]{3}-[0-9]{4}$", message = "※半角英数と-を用いて入力してください")
     private String zipCode;
 
     @NotBlank(message = "※入力してください")
